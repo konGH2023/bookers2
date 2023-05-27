@@ -24,9 +24,8 @@
             <ul class="navbar-nav ml-auto">
     <header>
       <% if user_signed_in? %>
-        <!--Home Users Books-->
         <li>
-          <%= link_to "Home path変更", homes_about_path %>
+          <%= link_to "Home path変更", user_path(current_user) %>
         </li>
         <li>
           <%= link_to "Users path変更", homes_about_path %>
@@ -38,12 +37,11 @@
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
-        <!--Home About-->
         <li>
           <%= link_to "Home path変更", homes_about_path %>
         </li>
         <li>
-          <%= link_to "About path変更", homes_about_path %>
+          <%= link_to "About", homes_about_path %>
         </li>
         <li>
           <%= link_to "Sign up", new_user_registration_path %>
@@ -59,13 +57,15 @@
     </header>
 
   <main class="mb-auto">
+    <div class="container">
     <%= yield %>
+    </div>
   </main>
 
     <footer class="bg-dark text-white pt-5 pb-4">
-      <div class="container">
+      <div class="container mt-5r">
         <div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="mx-auto">
             <p>CopyRight Infratop.inc</p>
           </div>
         </div>
