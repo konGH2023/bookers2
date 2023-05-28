@@ -3,7 +3,7 @@
 
 <h2>User info</h2>
 <p>画像</p>
-<p>name</p>
+<p>name<%= user_path(@user.id) %></p>
 <p>introduction</p>
 <a><%= link_to "edit", edit_user_path(@user) %></a>
 
