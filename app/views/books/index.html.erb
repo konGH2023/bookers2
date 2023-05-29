@@ -4,7 +4,10 @@
 
 <h2>User info</h2>
 <p><%= image_tag @user.get_profile_image(100,100) %></p>
-<p>name<%= @user.name %></p>
+<th>
+  <tr>name</tr>
+  <tr><%= @user.name %></tr>
+</th>
 <p>introduction</p>
 <a><%= link_to "edit", edit_user_path(@user) %></a>
 
