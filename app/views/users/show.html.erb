@@ -2,7 +2,7 @@
   <div class="col-md-3">
 
 <h2>User info</h2>
-<p>画像</p>
+<p><%= image_tag @user.get_profile_image(100,100) %></p>
 <p>name<%= @user.name %></p>
 <p>introduction</p>
 <a><%= link_to "edit", edit_user_path(@user) %></a>
@@ -35,9 +35,9 @@
     <% @books.each do |book| %>
       <tbody>
         <tr>
-          <td></td>
-          <td><%= link_to "@book", book_path(@user) %></td>
-          <td><%= @book.body %></td>
+          <td><%= image_tag @user.get_profile_image(100,100) %></td>
+          <td><%= link_to book.title, book_path(@user) %></td>
+          <td><%= book.body %></td>
         </tr>
       </tbody>
     <% end %>
